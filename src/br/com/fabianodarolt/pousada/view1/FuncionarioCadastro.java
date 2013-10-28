@@ -22,7 +22,7 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
 
     private JTable tabela;
     private int linhaSelecionada;
-    private DefaultTableModel modelo = new DefaultTableModel();
+    private DefaultTableModel modelo = new DefaultTableModel() ;
     
   
 
