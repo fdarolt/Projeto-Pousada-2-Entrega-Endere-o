@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9
+-- http://www.phpmyadmin.net
+--
+-- Servidor: localhost
+-- Tempo de GeraÃ§Ã£o: Out 28, 2013 as 11:31 AM
+-- VersÃ£o do Servidor: 5.5.8
+-- VersÃ£o do PHP: 5.3.5
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Banco de Dados: `locadoradb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `endereco`
+--
+
+CREATE TABLE IF NOT EXISTS `endereco` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `rua` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`codigo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Extraindo dados da tabela `endereco`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `codigo` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `login` varchar(20) DEFAULT NULL,
+  `senha` varchar(15) DEFAULT NULL,
+  `cpf` varchar(15) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
+  `dataNascimento` date NOT NULL,
+  `sexo` varchar(10) DEFAULT NULL,
+  `endereco_codigo` int(11) DEFAULT NULL,
+  PRIMARY KEY (`codigo`),
+  KEY `endereco_fk_idx` (`endereco_codigo`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`codigo`, `nome`, `login`, `senha`, `cpf`, `telefone`, `dataNascimento`, `sexo`, `endereco_codigo`) VALUES
+(1, '', '', '', NULL, '', '2000-10-10', NULL, NULL);
+
+--
+-- RestriÃ§Ãµes para as tabelas dumpadas
+--
+
+--
+-- RestriÃ§Ãµes para a tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `endereco_fk` FOREIGN KEY (`endereco_codigo`) REFERENCES `endereco` (`codigo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
