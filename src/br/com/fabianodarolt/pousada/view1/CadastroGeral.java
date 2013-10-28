@@ -34,10 +34,11 @@ public class CadastroGeral extends javax.swing.JFrame {
         painelLogin = new javax.swing.JPanel();
         ImagemLogo = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        painelFundo.setPreferredSize(new java.awt.Dimension(650, 271));
+        painelFundo.setPreferredSize(new java.awt.Dimension(650, 400));
 
         btFuncionarios.setForeground(new java.awt.Color(102, 102, 102));
         btFuncionarios.setText("Funcionários");
@@ -49,6 +50,11 @@ public class CadastroGeral extends javax.swing.JFrame {
 
         brFornecedores.setForeground(new java.awt.Color(102, 102, 102));
         brFornecedores.setText("Fornecedores");
+        brFornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                brFornecedoresActionPerformed(evt);
+            }
+        });
 
         btCadastro.setForeground(new java.awt.Color(102, 102, 102));
         btCadastro.setText("Produtos");
@@ -97,6 +103,14 @@ public class CadastroGeral extends javax.swing.JFrame {
             .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
+        jButton1.setForeground(new java.awt.Color(102, 102, 102));
+        jButton1.setText("Menu Principal");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelFundoLayout = new javax.swing.GroupLayout(painelFundo);
         painelFundo.setLayout(painelFundoLayout);
         painelFundoLayout.setHorizontalGroup(
@@ -104,22 +118,27 @@ public class CadastroGeral extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelFundoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(brFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(101, 101, 101))
+                .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(painelFundoLayout.createSequentialGroup()
+                        .addComponent(btFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(brFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(96, 96, 96))
         );
         painelFundoLayout.setVerticalGroup(
             painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(painelFundoLayout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGap(58, 58, 58)
                 .addGroup(painelFundoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btCadastro, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(brFornecedores, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btFuncionarios, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -144,11 +163,31 @@ public class CadastroGeral extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btFuncionariosActionPerformed
 
+    private void brFornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_brFornecedoresActionPerformed
+        // TODO add your handling code here:
+        //Estanciar Janela Principal
+        FornecedorCadastro fc = new FornecedorCadastro();
+        //Centrar Janela
+        fc.setLocationRelativeTo(null);
+        //Tornar Visivel
+        fc.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_brFornecedoresActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JanelaPrincipal jp = new JanelaPrincipal();
+            jp.setLocationRelativeTo(null);
+            jp.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ImagemLogo;
     private javax.swing.JButton brFornecedores;
     private javax.swing.JButton btCadastro;
     private javax.swing.JButton btFuncionarios;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel painelFundo;

@@ -4,8 +4,8 @@
  */
 package br.com.fabianodarolt.pousada.view1;
 
-import br.com.fabianodarolt.pousada.Controller.FuncionarioController;
-import br.com.fabianodarolt.pousada.Model.Funcionario;
+import br.com.fabianodarolt.pousada.Controller.FornecedorController;
+import br.com.fabianodarolt.pousada.Model.Fornecedor;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Fabiano
  */
-public class FuncionarioLista extends javax.swing.JFrame {
+public class FornecedorLista extends javax.swing.JFrame {
     
     private JTable tabela;
    // private int linhaSelecionada;
@@ -24,7 +24,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
     /**
      * Creates new form FuncionarioLista
      */
-    public FuncionarioLista() {
+    public FornecedorLista() {
         initComponents();
         criaJTable();
         painelRolagem.setViewportView(tabela);
@@ -38,6 +38,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btPesquisar1 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         painelRolagem = new javax.swing.JScrollPane();
         painelLogin = new javax.swing.JPanel();
@@ -49,6 +50,14 @@ public class FuncionarioLista extends javax.swing.JFrame {
         btEliminar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         btMenuPrincipal = new javax.swing.JButton();
+
+        btPesquisar1.setForeground(new java.awt.Color(102, 102, 102));
+        btPesquisar1.setText("Pesquisar");
+        btPesquisar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPesquisar1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -64,7 +73,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Bauhaus 93", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("pESquiSAr FuncIoNáRIo");
+        jLabel5.setText("pESquiSAr FoRNeceDOr");
 
         btPesquisar.setBackground(new java.awt.Color(204, 204, 204));
         btPesquisar.setForeground(new java.awt.Color(102, 102, 102));
@@ -105,7 +114,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
 
         btMenuPrincipal.setBackground(new java.awt.Color(204, 204, 204));
         btMenuPrincipal.setForeground(new java.awt.Color(102, 102, 102));
-        btMenuPrincipal.setText("Cadastro Funciorário");
+        btMenuPrincipal.setText("Cadastro Fornecedor");
         btMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btMenuPrincipalActionPerformed(evt);
@@ -120,29 +129,20 @@ public class FuncionarioLista extends javax.swing.JFrame {
                 .addComponent(ImagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(painelLoginLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
-                        .addComponent(btMenuPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(btMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txPesquisar)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(painelLoginLayout.createSequentialGroup()
                         .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(233, 233, 233))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
+                            .addGroup(painelLoginLayout.createSequentialGroup()
                                 .addComponent(btEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(painelLoginLayout.createSequentialGroup()
-                        .addComponent(txPesquisar)
-                        .addContainerGap())))
+                                .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         painelLoginLayout.setVerticalGroup(
             painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -152,7 +152,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
             .addGroup(painelLoginLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -161,7 +161,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
                     .addComponent(btEliminar)
                     .addComponent(btEditar)
                     .addComponent(btPesquisar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btMenuPrincipal)
                 .addContainerGap())
         );
@@ -177,8 +177,8 @@ public class FuncionarioLista extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(painelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(painelRolagem, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(painelRolagem, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -192,9 +192,9 @@ public class FuncionarioLista extends javax.swing.JFrame {
         int linhaSelecionada = -1;
         linhaSelecionada = tabela.getSelectedRow();
         if (linhaSelecionada >= 0) {
-            int idFuncionario = (int) tabela.getValueAt(linhaSelecionada, 0);
-            FuncionarioController fc = new FuncionarioController();
-            if (fc.remove(idFuncionario)) {
+            int idFornecedor = (int) tabela.getValueAt(linhaSelecionada, 0);
+            FornecedorController fc = new FornecedorController();
+            if (fc.remove(idFornecedor)) {
                 modelo.removeRow(linhaSelecionada);
             } else {
                 JOptionPane.showMessageDialog(null, "Nenhuma Linha Selecionada");
@@ -207,9 +207,9 @@ public class FuncionarioLista extends javax.swing.JFrame {
         int linhaSelecionada = -1;
         linhaSelecionada = tabela.getSelectedRow();
         if (linhaSelecionada >= 0) {
-            int idFuncionario = (int) tabela.getValueAt(linhaSelecionada, 0);
+            int idFornecedor = (int) tabela.getValueAt(linhaSelecionada, 0);
 
-            FuncionarioCadastro f1 = new FuncionarioCadastro(modelo, linhaSelecionada,idFuncionario);
+            FornecedorCadastro f1 = new FornecedorCadastro(modelo, linhaSelecionada,idFornecedor);
             f1.setLocationRelativeTo(null);
             f1.setVisible(true);
             dispose();
@@ -226,25 +226,29 @@ public class FuncionarioLista extends javax.swing.JFrame {
     private void txPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txPesquisarActionPerformed
         // TODO add your handling code here:
         String nome = txPesquisar.getText();
-        FuncionarioController fc = new FuncionarioController();
+        FornecedorController fc = new FornecedorController();
         fc.listByNome(nome);
         //metodo para limpar tabela
         modelo.setNumRows(0);
-        for (Funcionario f : fc.listByNome(nome)) {
+        for (Fornecedor fo : fc.listByNome(nome)) {
             modelo.addRow(new Object[]{
-                f.getId(),
-                f.getNome(),
-                f.getLogin(),
-                f.getCpf(),
-                f.getTelefoneResindecial(),
-                f.getSexo()});
+                fo.getId(),
+                fo.getNome(),
+                fo.getCnpj(),
+                fo.getPessoaContatoEmpresa(),
+                fo.getTelefoneResindecial(),
+                fo.getTelefoneCelular()});
         }
         dispose();
     }//GEN-LAST:event_txPesquisarActionPerformed
 
+    private void btPesquisar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPesquisar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPesquisar1ActionPerformed
+
     private void btMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMenuPrincipalActionPerformed
         // TODO add your handling code here:
-        FuncionarioCadastro fc = new FuncionarioCadastro();
+        FornecedorCadastro fc = new FornecedorCadastro();
         fc.setLocationRelativeTo(null);
         fc.setVisible(true);
         dispose();
@@ -258,6 +262,7 @@ public class FuncionarioLista extends javax.swing.JFrame {
     private javax.swing.JButton btEliminar;
     private javax.swing.JButton btMenuPrincipal;
     private javax.swing.JButton btPesquisar;
+    private javax.swing.JButton btPesquisar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
@@ -272,24 +277,24 @@ public class FuncionarioLista extends javax.swing.JFrame {
         tabela = new JTable(modelo);
         modelo.addColumn("Código");
         modelo.addColumn("Nome");
-        modelo.addColumn("CPF");
-        modelo.addColumn("Telefone");
-        modelo.addColumn("Sexo");
-        modelo.addColumn("Usuário");
+        modelo.addColumn("CNPJ");
+        modelo.addColumn("Pessoa Contato");
+        modelo.addColumn("Telef. Empresa");
+        modelo.addColumn("telef. Celular");
         preencherJTable();
     }
 
     private void preencherJTable() {
 
-        FuncionarioController uc = new FuncionarioController();
-        for (Funcionario f : uc.listarTodos()) {
+        FornecedorController uc = new FornecedorController();
+        for (Fornecedor fo : uc.listarTodos()) {
             modelo.addRow(new Object[]{
-                f.getId(),
-                f.getNome(),
-                f.getCpf(),
-                f.getTelefoneResindecial(),
-                f.getSexo(),
-                f.getLogin(),});
+                fo.getId(),
+                fo.getNome(),
+                fo.getCnpj(),
+                fo.getPessoaContatoEmpresa(),
+                fo.getTelefoneResindecial(),
+                fo.getTelefoneCelular()});
         }
     }
 }

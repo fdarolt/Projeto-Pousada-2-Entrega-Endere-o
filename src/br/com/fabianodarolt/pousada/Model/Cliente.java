@@ -8,7 +8,8 @@ package br.com.fabianodarolt.pousada.Model;
     private String telefoneEmpresaCliente;
     private String procedenciaCliente;
     private String destinoCliente;
-    private ServicoGeral servicoGeral;    
+    private ServicoGeral servicoGeral;
+    private Endereco endereco;
     
      //GERAR CONSTRUTOR
     public Cliente() {
@@ -63,9 +64,18 @@ package br.com.fabianodarolt.pousada.Model;
         this.servicoGeral = servicoGeral;
     }    
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     //INSTANCIAR METODO TO STRING
     @Override
     public String toString() {
-        return "Cliente{" + "passaporte=" + passaporte + ", cartaoCredito=" + cartaoCredito + ", telefoneEmpresaCliente=" + telefoneEmpresaCliente + ", procedenciaCliente=" + procedenciaCliente + ", destinoCliente=" + destinoCliente + ", servicoGeral=" + servicoGeral + '}';
-    }    
+        return "Cliente{" + "passaporte=" + passaporte + ", cartaoCredito=" + cartaoCredito + ", telefoneEmpresaCliente=" + telefoneEmpresaCliente + ", procedenciaCliente=" + procedenciaCliente + ", destinoCliente=" + destinoCliente + ", servicoGeral=" + servicoGeral + ", endereco=" + endereco + '}';
+    }
+    
 }

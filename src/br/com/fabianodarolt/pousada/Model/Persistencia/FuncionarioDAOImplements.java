@@ -124,6 +124,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
 
                 Endereco en = new Endereco();
 
+                en.setIdEndereco(rs.getInt("endereco.id"));
                 en.setRua(rs.getString("endereco.rua"));
                 en.setNumero(Integer.parseInt(rs.getString("endereco.numero")));
                 en.setComplemento(rs.getString("endereco.complemento"));
@@ -183,6 +184,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
 
                 Endereco en = new Endereco();
 
+                en.setIdEndereco(rs.getInt("endereco.id"));
                 en.setRua(rs.getString("endereco.rua"));
                 en.setNumero(Integer.parseInt(rs.getString("endereco.numero")));
                 en.setComplemento(rs.getString("endereco.complemento"));
@@ -191,8 +193,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
                 en.setEstado(rs.getString("endereco.estado"));
                 en.setPais(rs.getString("endereco.pais"));
                 en.setCep(rs.getString("endereco.cep"));
-                en.setIdEndereco(rs.getInt("endereco.id"));
-
+                
                 f.setEndereco(en);
 
                 //********************************************************************************************  
@@ -219,7 +220,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
         return f;
     }
 
-    private int update(Funcionario f) {
+    public int update(Funcionario f) {
         Connection con = null;
         PreparedStatement pstm = null;
         int retorno = -1;
@@ -245,7 +246,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
             retorno = f.getId();
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Erro ao Editar Funcionário " + e);
+            JOptionPane.showMessageDialog(null, "Erro ao Editar Funcionário " + e.getMessage());
         } finally {
             try {
                 ConnectionFactory.closeConnection(con, pstm);
@@ -280,6 +281,7 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
 
                 Endereco en = new Endereco();
 
+                en.setIdEndereco(rs.getInt("endereco.id"));
                 en.setRua(rs.getString("endereco.rua"));
                 en.setNumero(Integer.parseInt(rs.getString("endereco.numero")));
                 en.setComplemento(rs.getString("endereco.complemento"));
@@ -316,11 +318,8 @@ public class FuncionarioDAOImplements implements FuncionarioDAO {
         }
         return funcionarios;
     }
-
-    @Override
-    public int editar(Funcionario f) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
+    // Metodo para SENHA e LOGIN ******************************************************************************
 
     public boolean autenticador(String txLogin, String txSenha) {
         boolean autentica = false;

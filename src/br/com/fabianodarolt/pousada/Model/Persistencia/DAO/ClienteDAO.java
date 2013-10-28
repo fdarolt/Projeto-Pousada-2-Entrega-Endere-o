@@ -7,12 +7,12 @@ import java.util.List;
 
 public interface ClienteDAO {
     
-//    int salvar (Cliente c);
-//    int editar (Cliente c);
-//    boolean remove (int id);
-//    List<Cliente> listAll();    
-//    Cliente listById (int codigo);
-//    List<Cliente> listByNome (String nome);
-//    
+    int salvar (Cliente c);
+    int update (Cliente c);
+    boolean remove (int id);
+    List<Cliente> listAll();    
+    Cliente listById (int codigo);
+    List<Cliente> listByNome (String nome);
+    
     
 }

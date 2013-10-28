@@ -57,8 +57,6 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
             rbMasculino.setSelected(true);
         }
 
-
-
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String data = sdf.format(f.getDataNascimento());
         txDataNascimento.setText(data);
@@ -165,6 +163,7 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
         btPesquisar = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
         btAdicionar = new javax.swing.JButton();
+        btMenuPrincipal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -317,7 +316,7 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addGap(18, 18, 18)
                                 .addComponent(txNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                                 .addGroup(tpCadastroPessoalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel13)
@@ -575,6 +574,14 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
             }
         });
 
+        btMenuPrincipal.setForeground(new java.awt.Color(102, 102, 102));
+        btMenuPrincipal.setText("Menu Principal");
+        btMenuPrincipal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMenuPrincipalActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout painelLoginLayout = new javax.swing.GroupLayout(painelLogin);
         painelLogin.setLayout(painelLoginLayout);
         painelLoginLayout.setHorizontalGroup(
@@ -582,15 +589,16 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
                 .addComponent(ImagemLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel19, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, painelLoginLayout.createSequentialGroup()
                         .addComponent(btAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                        .addComponent(btPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btMenuPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
         );
         painelLoginLayout.setVerticalGroup(
             painelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -605,6 +613,8 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
                     .addComponent(btPesquisar)
                     .addComponent(btLimpar)
                     .addComponent(btAdicionar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btMenuPrincipal)
                 .addContainerGap())
         );
 
@@ -624,7 +634,7 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(tpCadastroFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 657, Short.MAX_VALUE)
+            .addComponent(tpCadastroFundo, javax.swing.GroupLayout.PREFERRED_SIZE, 650, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -777,10 +787,20 @@ public class FuncionarioCadastro extends javax.swing.JFrame {
     private void txCodigoFuncionarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txCodigoFuncionarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txCodigoFuncionarioActionPerformed
+
+    private void btMenuPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMenuPrincipalActionPerformed
+        // TODO add your handling code here:
+        CadastroGeral cg = new CadastroGeral();
+            cg.setLocationRelativeTo(null);
+            cg.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_btMenuPrincipalActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ImagemLogo;
     private javax.swing.JButton btAdicionar;
     private javax.swing.JButton btLimpar;
+    private javax.swing.JButton btMenuPrincipal;
     private javax.swing.JButton btPesquisar;
     private javax.swing.ButtonGroup grupoSexo;
     private javax.swing.JLabel jLabel1;

@@ -8,7 +8,7 @@ import java.util.List;
 public interface FuncionarioDAO {
     
     int salvar (Funcionario f);
-    int editar (Funcionario f);
+    int update (Funcionario f);
     boolean remove (int id);
     List<Funcionario> listAll();    
     Funcionario listById (int codigo);
